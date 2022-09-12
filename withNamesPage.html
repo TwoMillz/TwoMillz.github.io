@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MtG Affinity Group Commander Selector!</title>
+        <link rel="stylesheet" href="./styles/main.css">
+        <script src="https://kit.fontawesome.com/bd13bdae7c.js" crossorigin="anonymous"></script>
+
+        <!-- <script src="./scripts/parser.js"></script>
+        <script src="./scripts/buildAPI.js"></script>
+        <script src="./scripts/groupAPI.js"></script>
+        <script src="./scripts/nameInputs.js"></script>
+        <script src="./scripts/nameButton.js"></script> -->
+    </head>
+
+    <body>
+        <div class="navmenu">
+            <nav>
+                <label for="id-show-menu" class="show-menu">
+                    <div class="nav-icon">
+                        <i class="fa fa-navicon"></i>
+                    </div>
+                </label>
+                <input type="checkbox" id="id-show-menu" class="checkbox-menu" role="button">
+                <div class="menu-block">
+                    <ul class="navUL">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./groupPage.html">Group Auction</a></li>
+                        <li><a href="./withNamesPage.html">Group Assigned</a></li>
+                        <li><a href="#">Some link</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="top">
+            <div class="glowtext">
+                <h1>Party people at the place to be: Select Your Commander(s)!</h1>
+            </div>
+        </div>
+
+        <!-- MANA SYMBOLS -->
+        <div class="mtgicons">
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxGreenFilter" name="greenFilter" value="green" checked>
+                    <span>
+                        <img src="images/forest.png" alt="Forest">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxBlackFilter" name="blackFilter" value="black" checked>
+                    <span>
+                        <img src="images/swamp.png" alt="Swamp">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxRedFilter" name="redFilter" value="red" checked>
+                    <span>
+                        <img src="images/mountain.png" alt="Mountain">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxBlueFilter" name="blueFilter" value="blue" checked>
+                    <span>
+                        <img src="images/island.png" alt="Island">
+                    </span>
+                </label>
+            </div>
+            <div>                
+                <label>
+                    <input type="checkbox" id="checkboxWhiteFilter" name="whiteFilter" value="white" checked>
+                    <span>
+                        <img src="images/plains.png" alt="Plains">
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="colorlistbox">
+            <div class="colorfilter">
+                <label for="colorFilter">Decide how to use the colors</label>
+                <select name="colorFilter" id="dropdownColorFilter">
+                    <option value="atMost">at most these colors</option>
+                    <option value="include">including these colors</option>
+                    <option value="exactly">exactly these colors</option>
+                </select>
+            </div>
+        </div>
+        <br><br>
+
+        <h1>How many people are playing?</h1>
+        <select id="dropdownSelectPlayerCount">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+        
+        <br>
+
+        <div class="divNameSeats1and2" id="divNameSeats1and2">
+            <div id="divNameSeatA1" class="divNameSeatA1">
+                <label for="textPlayer1Name" id="labelPlayer1Name" class="labelPlayer1Name">Player 1's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer1Name" class="textPlayer1Name">
+            </div>
+            <div id="divNameSeatA2" class="divNameSeatA2">
+                <label for="textPlayer2Name" id="labelPlayer2Name class="labelPlayer2Name">Player 2's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer2Name" class="textPlayer2Name">
+            </div>
+        </div>
+        <div class="divNameSeats3and4" id="divNameSeats3and4">
+            <div id="divNameSeatA3" class="divNameSeatA3">
+                <label for="textPlayer3Name" id="labelPlayer3Name" class="labelPlayer3Name">Player 3's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer3Name" class="textPlayer3Name">
+            </div>
+            <div id="divNameSeatA4" class="divNameSeatA4">
+                <label for="textPlayer4Name" id="labelPlayer4Name" class="labelPlayer4Name">Player 4's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer4Name" class="textPlayer4Name">
+            </div>
+        </div>
+        <div class="divNameSeats5and6" id="divNameSeats5and6"></div>
+            <div id="divNameSeatA5" class="divNameSeatA5">
+                <label for="textPlayer5Name" id="labelPlayer5Name" class="labelPlayer5Name">Player 5's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer5Name" class="textPlayer5Name">
+            </div>
+            <div id="divNameSeatB1" class="divNameSeatB1">
+                <label for="textPlayer6Name" id="labelPlayer6Name" class="labelPlayer6Name">Player 6's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer6Name" class="textPlayer6Name">
+            </div>
+        </div>
+        <div class="divNameSeats7and8" id="divNameSeats7and8">
+            <div id="divNameSeatB2" class="divNameSeatB2">
+                <label for="textPlayer7Name" id="labelPlayer7Name" class="labelPlayer7Name">Player 7's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer7Name" class="textPlayer7Name">
+            </div>
+            <div id="divNameSeatB3" class="divNameSeatB3">
+                <label for="textPlayer8Name" id="labelPlayer8Name" class="labelPlayer8Name">Player 8's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer8Name" class="textPlayer8Name">
+            </div>
+        </div>
+        <div class="divNameSeats9and10" id="divNameSeats9and10">
+            <div id="divNameSeatB4" class="divNameSeatB4">
+                <label for="textPlayer9Name" id="labelPlayer9Name" class="labelPlayer9Name">Player 9's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer9Name" class="textPlayer9Name">
+            </div>
+            <div id="divNameSeatB5" class="divNameSeatB5">
+                <label for="textPlayer10Name" id="labelPlayer10Name" class="labelPlayer10Name">Player 10's name:&nbsp&nbsp</label>
+                <input type="text" id="textPlayer10Name" class="textPlayer10Name">
+            </div>
+        </div>
+
+        <button class="isgood" id="buttonPlayerNamesSubmit">Is Good</button>
+
+        <br><br>
+
+        <div id="divGroupASeats" class="divGroupASeats">
+            <div id="divSeatsA1andA1c" class="divSeatsA1andA1c">
+                <img class="cardImage imageGroupPageSeatA1" id="imageGroupPageSeatA1" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatA1c" id="imageGroupPageSeatA1c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatA1WhoIs" class="labelNameSeatA1WhoIs">Player 1</label>
+            </div>
+            <div id="divSeatsA2andA2c" class="divSeatsA2andA2c">
+                <img class="cardImage imageGroupPageSeatA2" id="imageGroupPageSeatA2" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatA2c" id="imageGroupPageSeatA2c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatA2WhoIs" class="labelNameSeatA2WhoIs">Player 2</label>
+            </div>
+            <div id="divSeatsA3andA3c" class="divSeatsA3andA3c">
+                <img class="cardImage imageGroupPageSeatA3" id="imageGroupPageSeatA3" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatA3c" id="imageGroupPageSeatA3c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatA3WhoIs" class="labelNameSeatA3WhoIs">Player 3</label>
+            </div>
+            <div id="divSeatsA4andA4c" class="divSeatsA4andA4c">
+                <img class="cardImage imageGroupPageSeatA4" id="imageGroupPageSeatA4" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatA4c" id="imageGroupPageSeatA4c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatA4WhoIs" class="labelNameSeatA4WhoIs">Player 4</label>
+            </div>
+            <div id="divSeatsA5andA5c" class="divSeatsA5andA5c">
+                <img class="cardImage imageGroupPageSeatA5" id="imageGroupPageSeatA5" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatA5c" id="imageGroupPageSeatA5c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatA5WhoIs" class="labelNameSeatA5WhoIs">Player 5</label>
+            </div>
+        </div>
+
+        <br><br>
+
+        <div id="divGroupBSeats" class="divGroupBSeats">
+            <div id="divSeatsB1andB1c" class="divSeatsB1andB1c">
+                <img class="cardImage imageGroupPageSeatB1" id="imageGroupPageSeatB1" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatB1c" id="imageGroupPageSeatB1c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatB1WhoIs" class="labelNameSeatB1WhoIs">Player 6</label>
+            </div>
+            <div id="divSeatsB2andB2c" class="divSeatsB2andB2c">
+                <img class="cardImage imageGroupPageSeatB2" id="imageGroupPageSeatB2" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatB2c" id="imageGroupPageSeatB2c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatB2WhoIs" class="labelNameSeatB2WhoIs">Player 7</label>
+            </div>
+            <div id="divSeatsB3andB3c" class="divSeatsB3andB3c">
+                <img class="cardImage imageGroupPageSeatB3" id="imageGroupPageSeatB3" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatB3c" id="imageGroupPageSeatB3c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatB3WhoIs" class="labelNameSeatB3WhoIs">Player 8</label>
+            </div>
+            <div id="divSeatsB4andB4c" class="divSeatsB4andB4c">
+                <img class="cardImage imageGroupPageSeatB4" id="imageGroupPageSeatB4" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatB4c" id="imageGroupPageSeatB4c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatB4WhoIs" class="labelNameSeatB4WhoIs">Player 9</label>
+            </div>
+            <div id="divSeatsB5andB5c" class="divSeatsB5andB5c">
+                <img class="cardImage imageGroupPageSeatB5" id="imageGroupPageSeatB5" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <img class="cardImage imageGroupPageSeatB5c" id="imageGroupPageSeatB5c" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+                <label id="labelNameSeatB5WhoIs" class="labelNameSeatB5WhoIs">Player 10</label>
+            </div>
+        </div>
+
+        <script src="./scripts/parser.js"></script>
+        <script src="./scripts/buildAPI.js"></script>
+        <script src="./scripts/groupAPI.js"></script>
+        <script src="./scripts/nameInputs.js"></script>
+        <script src="./scripts/nameButton.js"></script>
+    </body>
+
+</html>

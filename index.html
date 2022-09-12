@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MtG Affinity Group Commander Selector!</title>
+        <link rel="stylesheet" href="./styles/main.css">
+        <script src="https://kit.fontawesome.com/bd13bdae7c.js" crossorigin="anonymous"></script>
+
+        <script src="./scripts/parser.js"></script>
+        <script src="./scripts/buildAPI.js"></script>
+        <script src="./scripts/app.js"></script>
+    </head>
+
+    <body>
+        <div class="navmenu">
+            <nav>
+                <label for="id-show-menu" class="show-menu">
+                    <div class="nav-icon">
+                        <i class="fa fa-navicon"></i>
+                    </div>
+                </label>
+                <input type="checkbox" id="id-show-menu" class="checkbox-menu" role="button">
+                <div class="menu-block">
+                    <ul class="navUL">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./groupPage.html">Group Auction</a></li>
+                        <li><a href="./withNamesPage.html">Group Assigned</a></li>
+                        <li><a href="#">Some link</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+        <div class="top">
+            <div class="glowtext">
+                <h1>Party people at the place to be: Select Your Commander(s)!</h1>
+            </div>
+        </div>
+
+        <!-- MANA SYMBOLS -->
+        <div class="mtgicons">
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxGreenFilter" name="greenFilter" value="green" checked>
+                    <span>
+                        <img src="images/forest.png" alt="Forest">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxBlackFilter" name="blackFilter" value="black" checked>
+                    <span>
+                        <img src="images/swamp.png" alt="Swamp">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxRedFilter" name="redFilter" value="red" checked>
+                    <span>
+                        <img src="images/mountain.png" alt="Mountain">
+                    </span>
+                </label>
+            </div>
+            <div>
+                <label>
+                    <input type="checkbox" id="checkboxBlueFilter" name="blueFilter" value="blue" checked>
+                    <span>
+                        <img src="images/island.png" alt="Island">
+                    </span>
+                </label>
+            </div>
+            <div>                
+                <label>
+                    <input type="checkbox" id="checkboxWhiteFilter" name="whiteFilter" value="white" checked>
+                    <span>
+                        <img src="images/plains.png" alt="Plains">
+                    </span>
+                </label>
+            </div>
+        </div>
+
+        <div class="colorlistbox">
+            <div class="colorfilter">
+                <label class="glowtext" for="colorFilter">Decide how to use the colors</label>
+                <select name="colorFilter" id="dropdownColorFilter">
+                    <option value="atMost">at most these colors</option>
+                    <option value="include">including these colors</option>
+                    <option value="exactly">exactly these colors</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="cardholder">
+            <img class="cardImage" id="imageHomepageCommanderLeft" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+            <div id="divHomepageComplementCard" class="divHomepageComplementCard">
+                <img class="cardImage" id="imageHomepageComplementRight" src="https://static.wikia.nocookie.net/mtgsalvation_gamepedia/images/f/f8/Magic_card_back.jpg/revision/latest?cb=20140813141013" />
+            </div>
+        </div>
+
+        <div class="link-box">
+            <form>
+                <a href="javascript:void(0)" onclick="PickCommander();">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Pick My Commander!
+                </a>
+            </form>
+        </div>
+
+    </body>
+
+</html>
