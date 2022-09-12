@@ -1,0 +1,458 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+body
+{   
+    margin: 0;
+    padding: 0;
+    background: #004882;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*  ************************************************
+    Navigation Menu
+    ************************************************ */
+.navmenu
+{
+    padding-left: 23%;
+}
+.show-menu {
+    cursor: pointer;
+  }
+  
+  input.checkbox-menu[type="checkbox"] {
+    display: none;
+    -webkit-appearance: none;
+  }
+  
+  input.checkbox-menu[type="checkbox"]:checked ~ div.menu-block {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-icon {
+    display: inline-block;
+    font-size: 2em;
+    padding: 0.5em;
+    vertical-align: middle;
+  }
+  
+  .menu-block {
+    display: inline-block;
+    opacity: 0;
+    vertical-align: middle;
+    visibility: hidden;
+    -webkit-transition: all 0.25s;
+    -moz-transition: all 0.25s;
+    -ms-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    transition: all 0.25s;
+  }
+  
+  ul.navUL {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  ul.navUL li {
+    display: inline-block;
+    padding: 0px 5px;
+    font-size: 1.5em;
+  }
+  
+  ul.navUL li a {
+    color: #999999;
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+  }
+  
+  ul.navUL li a:hover {
+    color: #fdfdfe;
+    background-color: #83EEEF;
+    padding: 10px;
+    border-radius: 25px;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
+  }
+
+/*  ************************************************
+    Top division
+    ************************************************ */
+.top
+{
+    display: flex;
+    width: 100vw;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.glowtext
+{
+    color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3;
+}
+
+
+/*  ************************************************
+    MTG Icons
+    ************************************************ */
+
+.mtgicons
+{
+    /* border: #FF3131;
+    border-style: double; */
+    /* height: 200px; */
+    width: 100vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mtgicons div
+{
+    margin: 10px;
+
+}
+
+.mtgicons div label
+{
+    cursor: pointer;
+}
+
+.mtgicons div label input[type="checkbox"]
+{
+    display: none;
+}
+
+.mtgicons div label img
+{
+    height: 50px;
+    width: 50px;
+
+}
+
+.mtgicons div label span
+{
+    position: relative;
+    display: inline-block;
+    background: #424242;
+    padding: 15px 30px;
+    color: #555;
+    text-shadow: 0 1px 4px  rgba(0,0,0,.5);
+    border-radius: 30px;
+    font-size: 20px;
+    transition: 0.5s;
+    user-select: none;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.mtgicons div label span:before
+{
+    content: '';
+    position: absolute;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: rgba(255,255,255,.1);
+}
+
+.mtgicons div label input[type="checkbox"]:checked ~ span
+{
+    background: #fff;
+}
+
+.mtgicons div:nth-child(1) label input[type="checkbox"]:checked ~ span
+{
+    background: #0f0;
+    color: #fff;
+    box-shadow: 0 2px 20px #0f0;
+}
+
+.mtgicons div:nth-child(2) label input[type="checkbox"]:checked ~ span
+{
+    background: #222024;
+    color: #fff;
+    box-shadow: 0 2px 20px #222024;
+}
+
+.mtgicons div:nth-child(3) label input[type="checkbox"]:checked ~ span
+{
+    background: #FF3131;
+    color: #fff;
+    box-shadow: 0 2px 20px #FF3131;
+}
+
+.mtgicons div:nth-child(4) label input[type="checkbox"]:checked ~ span
+{
+    background: #83EEEF;
+    color: #fff;
+    box-shadow: 0 2px 20px #83EEEF;
+}
+
+.mtgicons div:nth-child(5) label input[type="checkbox"]:checked ~ span
+{
+    background: #FFFFA7;
+    color: #000;
+    box-shadow: 0 2px 20px #FFFFA7;
+}
+
+/*  ************************************************
+    Listbox - how to use colors
+    ************************************************ */
+
+.colorlistbox
+{
+    /* border: #FF3131;
+    border-style: double; */
+    height: 200px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.colorfilter
+{
+    position: relative;
+    align-self: center;
+    transform: translate(-50%, -50%);
+}
+
+.colorfilter label
+{
+    display: flex;
+    height: 50%;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    /* color: #fdfdfe;
+    text-shadow: 0px 0px 5px #b393d3, 0px 0px 10px #b393d3, 0px 0px 10px #b393d3, 0px 0px 20px #b393d3; */
+    
+}
+
+.colorfilter select {
+    background-color: #0563af;
+    color: white;
+    padding: 12px;
+    width: 250px;
+    border: none;
+    font-size: 20px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    appearance: button;
+    outline: none;
+}
+
+/* .colorfilter::before {
+    content: "\f13a";
+    font-family: FontAwesome;
+    position: relative;
+    top: 0;
+    right: 0;
+    width: 20%;
+    height: 50%;
+    text-align: center;
+    font-size: 28px;
+    line-height: 45px;
+    color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+} */
+
+.colorfilter:hover::before {
+    color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.colorfilter select option {
+    padding: 30px;
+}
+
+/*  ************************************************
+    Card Images
+    ************************************************ */
+.cardholder
+{   
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.cardImage
+{
+    width: 315px;
+    height: 440px;
+    border-radius: 25px;
+}
+
+.imageManaSymbol
+{
+    width: 200px;
+    height: 200px;
+}
+
+.divHomepageComplementCard
+{
+    display: none;
+}
+
+.imageGroupPageSeatA1, .imageGroupPageSeatA1c, .labelNameSeatA1WhoIs, .imageGroupPageSeatA2, .imageGroupPageSeatA2c, .labelNameSeatA2WhoIs,
+.imageGroupPageSeatA3, .imageGroupPageSeatA3c, .labelNameSeatA3WhoIs, .imageGroupPageSeatA4, .imageGroupPageSeatA4c, .labelNameSeatA4WhoIs,
+.imageGroupPageSeatA5, .imageGroupPageSeatA5c, .labelNameSeatA5WhoIs, .imageGroupPageSeatB1, .imageGroupPageSeatB1c, .labelNameSeatB1WhoIs, 
+.imageGroupPageSeatB2, .imageGroupPageSeatB2c, .labelNameSeatB2WhoIs, .imageGroupPageSeatB3, .imageGroupPageSeatB3c, .labelNameSeatB3WhoIs,
+.imageGroupPageSeatB4, .imageGroupPageSeatB4c, .labelNameSeatB4WhoIs, .imageGroupPageSeatB5, .imageGroupPageSeatB5c, .labelNameSeatB5WhoIs
+{
+    display: none;
+}
+
+.textPlayer3Name, .textPlayer4Name, .textPlayer5Name, .textPlayer6Name,
+.textPlayer7Name, .textPlayer8Name, .textPlayer9Name, .textPlayer10Name,
+.labelPlayer3Name, .labelPlayer4Name, .labelPlayer5Name, .labelPlayer6Name,
+.labelPlayer7Name, .labelPlayer8Name, .labelPlayer9Name, .labelPlayer10Name
+{
+    display: none;
+}
+
+.divNameSeats1and2, .divNameSeats3and4, .divNameSeats5and6, .divNameSeats7and8, .divNameSeats9and10
+{
+    display: flex;
+}
+
+.divNameSeatA1, .divNameSeatA2, .divNameSeatA3, .divNameSeatA4, .divNameSeatA5,
+.divNameSeatB1, .divNameSeatB2, .divNameSeatB3, .divNameSeatB4, .divNameSeatB5
+{
+    display: flex;
+}
+
+.divGroupASeats, .divGroupBSeats
+{
+    display: flex;
+}
+
+/*  ************************************************
+    Spinning button
+    ************************************************ */
+.link-box
+{
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+}
+
+.link-box form
+{
+    color: white;
+}
+
+
+.link-box form a {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #03e9f4;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px
+  }
+  
+  .link-box a:hover {
+    background: #03e9f4;
+    color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #03e9f4,
+                0 0 25px #03e9f4,
+                0 0 50px #03e9f4,
+                0 0 100px #03e9f4;
+  }
+  
+  .link-box a span {
+    position: absolute;
+    display: block;
+  }
+  
+  .link-box a span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #03e9f4);
+    animation: btn-anim1 1s linear infinite;
+  }
+  
+  @keyframes btn-anim1 {
+    0% {
+      left: -100%;
+    }
+    50%,100% {
+      left: 100%;
+    }
+  }
+  
+  .link-box a span:nth-child(2) {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #03e9f4);
+    animation: btn-anim2 1s linear infinite;
+    animation-delay: .25s
+  }
+  
+  @keyframes btn-anim2 {
+    0% {
+      top: -100%;
+    }
+    50%,100% {
+      top: 100%;
+    }
+  }
+  
+  .link-box a span:nth-child(3) {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #03e9f4);
+    animation: btn-anim3 1s linear infinite;
+    animation-delay: .5s
+  }
+  
+  @keyframes btn-anim3 {
+    0% {
+      right: -100%;
+    }
+    50%,100% {
+      right: 100%;
+    }
+  }
+  
+  .link-box a span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #03e9f4);
+    animation: btn-anim4 1s linear infinite;
+    animation-delay: .75s
+  }
+  
+  @keyframes btn-anim4 {
+    0% {
+      bottom: -100%;
+    }
+    50%,100% {
+      bottom: 100%;
+    }
+  }
