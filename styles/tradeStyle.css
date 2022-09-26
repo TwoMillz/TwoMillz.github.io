@@ -1,0 +1,35 @@
+.divMainBody
+{}
+
+.divNewCardAreaContainer
+{}
+
+.divNewCardTextBoxContainer
+{
+    display: flex;
+}
+.divNewCardWhichSideContainer
+{}
+
+.divNewNameContainer
+{}
+
+.divNewSetContainer
+{}
+
+.divNewStyleContainer
+{}
+
+.divNewQuantityContainer
+{}
+
+.divTopTable, .divBottomTable
+{}
+
+.tableTop, .tableBottom
+{}
+
+.tdTableFooterTotalDollars:before
+{
+    content: "$";
+}
