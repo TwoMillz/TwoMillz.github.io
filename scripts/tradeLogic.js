@@ -6,7 +6,6 @@
                     and the sets are selectable from the sets for the relevant card
      - fix pricing so it pulls from multiple sources to prevent so many no-price errors
      - find out why it sometimes shows no price even when the site shows USD
-     - maybe add rarity and a picture for each card in the table
 */
 
 const selectGrabNewCardWhichSide = document.getElementById("selectNewCardWhichSide");
