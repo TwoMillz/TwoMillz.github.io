@@ -30,8 +30,8 @@ textGrabNewCardQuantity.onchange = function()
 
 const tdTopGrandTotal = document.getElementById("tdTableFooterTopDollars");
 const tdBottomGrandTotal = document.getElementById("tdTableFooterBottomDollars");
-let topGrandTotal = Number("0");
-let bottomGrandTotal = Number("0");
+let topGrandTotal = Number(0);
+let bottomGrandTotal = Number(0);
 
 const buttonAddCard = document.getElementById("buttonNewCardAdd");
 buttonAddCard.addEventListener('click', async () =>
@@ -47,24 +47,30 @@ buttonAddCard.addEventListener('click', async () =>
     }
 
     let newRow = tableBody.insertRow();
+
     let newCell = newRow.insertCell();
-    let newValue = document.createTextNode(textGrabNewCardName.value);
-    console.log(newValue);
+    let deleteRowButton = document.createElement('button');
+    deleteRowButton.textContent = "remove";
+    deleteRowButton.onclick = function(event)
+    {
+        RemoveRow(this);
+    };
+    newCell.appendChild(deleteRowButton);
+
+    newCell = newRow.insertCell();
+    newValue = document.createTextNode(textGrabNewCardName.value);
     newCell.appendChild(newValue);
 
     newCell = newRow.insertCell();
     newValue = document.createTextNode(textGrabNewCardSet.value);
-    console.log(newValue);
     newCell.appendChild(newValue);
 
     newCell = newRow.insertCell();
     newValue = document.createTextNode(selectGrabNewCardStyle.value);
-    console.log(newValue);
     newCell.appendChild(newValue);
 
     newCell = newRow.insertCell();
     newValue = document.createTextNode(textGrabNewCardQuantity.value);
-    console.log(newValue);
     newCell.appendChild(newValue);
 
     let styleAddendum;
@@ -89,19 +95,21 @@ buttonAddCard.addEventListener('click', async () =>
     let jsonObject = await response.json();
     let price = jsonObject.prices.usd;
 
+    let adjustedPrice = Number(price).toFixed(2) * Number(textGrabNewCardQuantity.value).toFixed(2);
+
     newCell = newRow.insertCell();
-    newValue = document.createTextNode(price);
+    newValue = document.createTextNode(Number(adjustedPrice).toFixed(2));
     console.log(newValue);
     newCell.appendChild(newValue);
 
     if(selectGrabNewCardWhichSide.value == "top")
     {
-        topGrandTotal += Number(price);
-        tdTopGrandTotal.innerHTML = topGrandTotal;
+        topGrandTotal += Number(adjustedPrice);
+        tdTopGrandTotal.innerHTML = Number(topGrandTotal).toFixed(2);
     }else
     {
-        bottomGrandTotal += Number(price);
-        tdBottomGrandTotal.innerHTML = bottomGrandTotal;
+        bottomGrandTotal += Number(adjustedPrice);
+        tdBottomGrandTotal.innerHTML = Number(bottomGrandTotal).toFixed(2);
     }
 
     selectGrabNewCardWhichSide.value = "";
@@ -110,3 +118,28 @@ buttonAddCard.addEventListener('click', async () =>
     selectGrabNewCardStyle.value = "";
     textGrabNewCardQuantity.value = "";
 });
+
+function RemoveRow(button)
+{
+    let buttonCell = button.parentNode;
+    let buttonRow = buttonCell.parentNode;
+    let buttonBody = buttonRow.parentNode;
+    let buttonTable = buttonBody.parentNode;
+    console.log(buttonTable.id);
+
+    let cellsInRow = buttonRow.getElementsByTagName("td");
+    let cardValue = cellsInRow[(cellsInRow.length - 1)];
+    console.log(cardValue.innerHTML);
+
+    if(buttonTable.id == "tableTop")
+    {
+        topGrandTotal -= Number(cardValue.innerHTML);
+        tdTopGrandTotal.innerHTML = Number(topGrandTotal).toFixed(2);
+    }else
+    {
+        bottomGrandTotal -= Number(cardValue.innerHTML);
+        tdBottomGrandTotal.innerHTML = Number(bottomGrandTotal).toFixed(2);
+    }
+
+    buttonRow.remove();
+}
